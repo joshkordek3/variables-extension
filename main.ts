@@ -5,7 +5,7 @@ enum Modes {
     //% block="needing to define variables before using them"
     NTD
 }
-//% weight=100 color=#0fbc11 icon="f0c9" block="Variables"
+//% weight=30 color=#0fbc11 icon="\uf0c9" block="Advanced Variables"
 namespace Variable {
     export let variables: any = {}
     let mode = 0;
