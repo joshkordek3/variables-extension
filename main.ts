@@ -14,12 +14,14 @@ namespace Variable {
         mode = modeGiven
     }
     //% block="define $variable || as $asValue"
-    export function initializeVariable(variable: string, asValue: any = 0): void {
+    //% asValue.defl=0
+    export function initializeVariable(variable: string, asValue?: any): void {
         // if (!(asValue)) asValue = 0
         variables[variable] = asValue
     }
     //% block="set $variable to $value"
-    export function setVariable(variable: string, value: any = 0): void {
+    //% value.defl=0
+    export function setVariable(variable: string, value: any): void {
         if (!(value)) value = 0
         if (!(variables[variable]) && mode == 1) {
             control.panic(907)
@@ -28,7 +30,8 @@ namespace Variable {
         variables[variable] = value
     }
     //% block="change $variable by $byValue"
-    export function changeVariable(variable: string, byValue: any = 1): void {
+    //% byValue.defl=1
+    export function changeVariable(variable: string, byValue: any): void {
         if (typeof byValue != "string" && typeof byValue != "number") control.panic(909) // the type of 'byValue' must be a string or a number
         if (!(variables[variable])) {
             if (typeof byValue == "number") setVariable(variable, 0)
