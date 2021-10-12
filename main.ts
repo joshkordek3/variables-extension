@@ -9,9 +9,9 @@ enum Modes {
 namespace Variable {
     export let variables: any = {}
     let mode = 0;
-    //% block="set mode to $mode"
-    export function changeMode(mode: Modes) {
-        mode = mode
+    //% block="set mode to $modeGiven"
+    export function changeMode(modeGiven: Modes) {
+        mode = modeGiven
     }
     //% block="define $variable || as $asValue"
     export function initializeVariable(variable: string, asValue: any = 0): void {
